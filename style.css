@@ -1,0 +1,251 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', 'Poppins', 'Quicksand', sans-serif;
+    padding: 20px;
+    position: relative;
+    overflow-x: hidden;
+}
+
+#loveCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 5;
+}
+
+.container {
+    z-index: 20;
+    width: 100%;
+    max-width: 550px;
+}
+
+.kartu {
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(2px);
+    border-radius: 70px;
+    padding: 30px 24px 40px;
+    box-shadow: 0 30px 40px rgba(0, 0, 0, 0.25);
+    text-align: center;
+}
+
+.lilin-area {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.lilin {
+    position: relative;
+    width: 70px;
+    height: 110px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.2s;
+}
+
+.lilin:hover {
+    transform: scale(1.05);
+}
+
+.lilin-body {
+    width: 50px;
+    height: 85px;
+    background: linear-gradient(145deg, #ffe0c4, #ffceaa);
+    border-radius: 30px 30px 15px 15px;
+    box-shadow: 0 5px 0 #d49c6c;
+    margin-top: 8px;
+}
+
+.sumbu {
+    width: 4px;
+    height: 14px;
+    background: #444;
+    border-radius: 2px;
+    position: relative;
+    top: -6px;
+}
+
+.api {
+    width: 22px;
+    height: 32px;
+    background: radial-gradient(circle, #ffb347, #ff6f00);
+    border-radius: 50% 50% 40% 40%;
+    position: relative;
+    top: -38px;
+    left: 0;
+    filter: blur(1px);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    box-shadow: 0 0 15px #ffa500;
+}
+
+.api.menyala {
+    opacity: 1;
+    animation: kedipApi 0.6s infinite alternate;
+}
+
+@keyframes kedipApi {
+    0% { transform: scale(1); opacity: 0.9; }
+    100% { transform: scale(1.08); opacity: 1; }
+}
+
+.label-lilin {
+    font-size: 0.75rem;
+    margin-top: 6px;
+    color: #b95c4a;
+    background: #ffebe5;
+    padding: 4px 12px;
+    border-radius: 40px;
+    font-weight: bold;
+}
+
+.heart-avatar {
+    font-size: 70px;
+    background: linear-gradient(145deg, #ffb7c5, #ff8da1);
+    width: 120px;
+    height: 120px;
+    border-radius: 60px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 8px 0 12px;
+    box-shadow: 0 12px 20px rgba(255, 60, 100, 0.3);
+    transition: all 0.2s;
+}
+
+h2 {
+    font-size: 1.9rem;
+    color: #ad3a55;
+    margin-top: 8px;
+}
+
+h3 {
+    font-size: 1rem;
+    color: #e07a8f;
+    font-weight: 500;
+    margin-bottom: 18px;
+}
+
+.gombal-container {
+    background: #fff5f0;
+    border-radius: 48px;
+    padding: 22px 16px;
+    margin: 15px 0;
+    border: 2px dashed #ffb7b0;
+}
+
+.gombal-isi {
+    font-size: 1.4rem;
+    font-weight: bold;
+    font-family: 'Georgia', cursive;
+    color: #b54462;
+    margin-bottom: 15px;
+    line-height: 1.3;
+    min-height: 100px;
+}
+
+.btn-gombal {
+    background: #ff8aa2;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 50px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: 0.2s;
+    margin-bottom: 10px;
+}
+
+.btn-gombal:hover {
+    background: #ff6b85;
+    transform: scale(0.97);
+}
+
+.progress-gombal, .progress-rahasia {
+    font-size: 0.75rem;
+    color: #c97a92;
+    margin-top: 5px;
+}
+
+.rahasia-box {
+    background: #ffeef4;
+    border-radius: 45px;
+    padding: 16px;
+    margin: 20px 0;
+    transition: all 0.3s;
+}
+
+.rahasia-header {
+    font-weight: bold;
+    color: #b94b67;
+    margin-bottom: 10px;
+}
+
+.rahasia-isi {
+    background: white;
+    padding: 14px;
+    border-radius: 35px;
+    color: #7a3e4b;
+    margin: 12px 0;
+    font-style: italic;
+    min-height: 80px;
+}
+
+.btn-rahasia {
+    background: #c95f78;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 40px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.aksi-group {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin: 18px 0;
+}
+
+.aksi-btn {
+    background: #ec7e96;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 50px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.1s linear;
+}
+
+.aksi-btn:active {
+    transform: scale(0.94);
+}
+
+.status-area {
+    background: #ffdede;
+    border-radius: 50px;
+    padding: 10px;
+    margin-top: 16px;
+    font-size: 0.9rem;
+    color: #ac4d66;
+}
